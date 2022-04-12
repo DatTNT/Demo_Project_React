@@ -1,5 +1,23 @@
+import { useState } from "react";
 import Header from "./component/Header";
-import FeedbackItem from "./component/FeedbackItem";
+import FeedbackList from "./component/FeedbackList";
+
+import FeedbackData from "./data/FeedbackData";
+
+function App() {
+  const [feedback, setFeedback] = useState(FeedbackData);
+  return (
+    <>
+      <Header />
+      <div className="container">
+        <FeedbackList feedback={feedback} />
+      </div>
+    </>
+  );
+}
+
+export default App;
+
 // function App() {
 //   const title = "Blog Post";
 //   const body = "This is my blog post";
@@ -32,15 +50,3 @@ import FeedbackItem from "./component/FeedbackItem";
 //     </div>
 //   );
 // }
-function App() {
-  return (
-    <>
-      <Header />
-      <div className="container">
-        <FeedbackItem></FeedbackItem>
-      </div>
-    </>
-  );
-}
-
-export default App;
